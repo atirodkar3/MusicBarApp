@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>PowerBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>PowerBarFrameWork.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>SoundColorMapper.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>97DC93071A399A14001EC023</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97DC931C1A399A14001EC023</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97DC94141A3DBC9D001EC023</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97DC941E1A3DBC9D001EC023</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97DC94391A3DBD1B001EC023</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97DC94431A3DBD1B001EC023</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

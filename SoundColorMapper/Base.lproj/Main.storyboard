@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SoundColorMapper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeL-ib-xzp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fua-ww-kJz" userLabel="PowerBar1" customClass="PowerBar" customModule="SoundColorMapper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="440" width="50" height="160"/>
+                                        <color key="backgroundColor" red="1" green="0.03697336063" blue="0.1102270778" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Xr9-fh-Wds"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="1" green="0.03697336063" blue="0.1102270778" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgT-7g-Pb6" userLabel="PowerBar2" customClass="PowerBar" customModule="SoundColorMapper" customModuleProvider="target">
+                                        <rect key="frame" x="175" y="440" width="50" height="160"/>
+                                        <color key="backgroundColor" red="1" green="0.03697336063" blue="0.1102270778" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="zWU-ad-f99"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="1" green="0.03697336063" blue="0.1102270778" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWd-Fp-UwL" userLabel="PowerBar3" customClass="PowerBar" customModule="SoundColorMapper" customModuleProvider="target">
+                                        <rect key="frame" x="370" y="440" width="50" height="160"/>
+                                        <color key="backgroundColor" red="1" green="0.03697336063" blue="0.1102270778" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Ptc-eU-tBx"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="1" green="0.03697336063" blue="0.1102270778" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lfl-Dp-FiQ" userLabel="PowerBar4" customClass="PowerBar" customModule="SoundColorMapper" customModuleProvider="target">
+                                        <rect key="frame" x="550" y="440" width="50" height="160"/>
+                                        <color key="backgroundColor" red="1" green="0.03697336063" blue="0.1102270778" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="f4g-jI-zTy"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="1" green="0.03697336063" blue="0.1102270778" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qgT-7g-Pb6" secondAttribute="bottom" id="0ko-6C-VVy"/>
+                                    <constraint firstItem="Fua-ww-kJz" firstAttribute="leading" secondItem="TeL-ib-xzp" secondAttribute="leading" id="5Xb-Pa-3cc"/>
+                                    <constraint firstAttribute="bottom" secondItem="pWd-Fp-UwL" secondAttribute="bottom" id="BBR-DY-h82"/>
+                                    <constraint firstItem="Lfl-Dp-FiQ" firstAttribute="leading" secondItem="pWd-Fp-UwL" secondAttribute="trailing" constant="130" id="GHg-Px-yd3"/>
+                                    <constraint firstItem="Lfl-Dp-FiQ" firstAttribute="top" secondItem="TeL-ib-xzp" secondAttribute="top" constant="440" id="MXK-J0-1bz"/>
+                                    <constraint firstItem="Fua-ww-kJz" firstAttribute="top" secondItem="TeL-ib-xzp" secondAttribute="top" constant="440" id="Ozb-mh-qDO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lfl-Dp-FiQ" secondAttribute="trailing" id="Y1D-dy-6bh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lfl-Dp-FiQ" secondAttribute="bottom" id="Zl5-Lk-zkl"/>
+                                    <constraint firstItem="qgT-7g-Pb6" firstAttribute="top" secondItem="TeL-ib-xzp" secondAttribute="top" constant="440" id="elc-sm-cNZ"/>
+                                    <constraint firstItem="pWd-Fp-UwL" firstAttribute="top" secondItem="TeL-ib-xzp" secondAttribute="top" constant="440" id="fey-2K-5Vs"/>
+                                    <constraint firstItem="qgT-7g-Pb6" firstAttribute="leading" secondItem="Fua-ww-kJz" secondAttribute="trailing" constant="125" id="nov-Sh-bcF"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fua-ww-kJz" secondAttribute="bottom" id="yjM-Ul-gR2"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngE-qb-E5j">
+                                <rect key="frame" x="275" y="70" width="50" height="30"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Hcp-zv-Dvj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMJ-n2-c4d">
+                                <rect key="frame" x="277" y="181" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="iI8-Kq-sVF"/>
+                                </constraints>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="i7i-ZC-sGg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Rd-Yc-5OP">
+                                <rect key="frame" x="277" y="321" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="613-mk-jRX"/>
+                                </constraints>
+                                <state key="normal" title="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="J1c-ug-jhE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TeL-ib-xzp" secondAttribute="trailing" id="2T3-hL-GI7"/>
+                            <constraint firstItem="GMJ-n2-c4d" firstAttribute="top" secondItem="ngE-qb-E5j" secondAttribute="bottom" constant="81" id="2vb-By-dPf"/>
+                            <constraint firstItem="TeL-ib-xzp" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="FKc-Jc-wsE"/>
+                            <constraint firstItem="TeL-ib-xzp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="P9E-dQ-T2x"/>
+                            <constraint firstAttribute="centerX" secondItem="6Rd-Yc-5OP" secondAttribute="centerX" id="Q5Q-4f-MQ1"/>
+                            <constraint firstAttribute="centerX" secondItem="GMJ-n2-c4d" secondAttribute="centerX" id="SSF-Fw-H84"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="TeL-ib-xzp" secondAttribute="bottom" id="VGz-uQ-dCI"/>
+                            <constraint firstItem="TeL-ib-xzp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ZkC-N0-OHT"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="TeL-ib-xzp" secondAttribute="bottom" id="aCQ-wG-r22"/>
+                            <constraint firstItem="ngE-qb-E5j" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="aI3-vC-hTE"/>
+                            <constraint firstAttribute="trailing" secondItem="TeL-ib-xzp" secondAttribute="trailing" id="kGJ-Dv-gkZ"/>
+                            <constraint firstAttribute="centerX" secondItem="ngE-qb-E5j" secondAttribute="centerX" id="lXJ-G9-eRy"/>
+                            <constraint firstItem="TeL-ib-xzp" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="o4Y-9C-A9W"/>
+                            <constraint firstItem="6Rd-Yc-5OP" firstAttribute="top" secondItem="GMJ-n2-c4d" secondAttribute="bottom" constant="110" id="s18-bJ-tRi"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FKc-Jc-wsE"/>
+                                <exclude reference="P9E-dQ-T2x"/>
+                                <exclude reference="kGJ-Dv-gkZ"/>
+                                <exclude reference="aCQ-wG-r22"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="TeL-ib-xzp" id="9Ih-d1-R5F"/>
+                        <outlet property="playButton" destination="GMJ-n2-c4d" id="Tzw-2g-Qg6"/>
+                        <outlet property="powerBar1" destination="Fua-ww-kJz" id="oYq-dl-eje"/>
+                        <outlet property="powerBar2" destination="qgT-7g-Pb6" id="vHC-jQ-deq"/>
+                        <outlet property="powerBar3" destination="pWd-Fp-UwL" id="QhY-mI-4X4"/>
+                        <outlet property="powerBar4" destination="Lfl-Dp-FiQ" id="mP7-wV-Bo0"/>
+                        <outlet property="recordButton" destination="ngE-qb-E5j" id="JEP-sv-AFJ"/>
+                        <outlet property="stopButton" destination="6Rd-Yc-5OP" id="mln-I5-x1U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
