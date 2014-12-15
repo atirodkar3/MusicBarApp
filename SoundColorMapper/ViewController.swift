@@ -10,21 +10,20 @@ import UIKit
 import AVFoundation
 
 class PowerLevel {
-    var totalLevelCalculated : NSNumber = 0
-    var totalInstances : NSNumber = 0
+    var minPowerLevel : NSNumber!
+    var maxPowerLevel : NSNumber!
     
-    init(totalLevelCalculated : NSNumber, totalInstances : NSNumber) {
-        self.totalLevelCalculated = 0
-        self.totalInstances = 0
+    init(minPowerLevel : NSNumber, maxPowerLevel : NSNumber) {
+        self.minPowerLevel = NSIntegerMax
+        self.maxPowerLevel = 0
     }
     
-    func addLevelCalculation(calculation : NSNumber, forInstance instance : NSNumber) -> Void {
-        totalLevelCalculated = totalLevelCalculated.floatValue + calculation.floatValue
-        totalInstances = totalInstances.floatValue + instance.floatValue
-    }
-    
-    func averagePowerCalculation() -> NSNumber {
-        return totalLevelCalculated.floatValue / totalInstances.floatValue
+    func addLevelCalculation(level : NSNumber) -> Void {
+        if (level.floatValue < minPowerLevel.floatValue) {
+            self.minPowerLevel = level.floatValue
+        } else if (level.floatValue >= maxPowerLevel.floatValue) {
+            self.maxPowerLevel = level.floatValue
+        }
     }
 }
 
@@ -33,7 +32,9 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     var audioRecorder : AVAudioRecorder!
     var audioPlayer : AVAudioPlayer!
     var meterTimer : NSTimer!
-    var maxRecordingPowerLevel : PowerLevel = PowerLevel(totalLevelCalculated: 0, totalInstances: 0)
+    var maxRecordingPowerLevel : PowerLevel = PowerLevel(minPowerLevel: NSIntegerMax, maxPowerLevel: 0)
+    var levelCalculator : PowerBarLevelCalculator!
+    
     @IBOutlet weak var backgroundView : UIView!
     @IBOutlet weak var recordButton : UIButton!
     @IBOutlet weak var playButton : UIButton!
@@ -118,6 +119,10 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         
         if (audioRecorder.recording) {
             audioRecorder.stop()
+            self.levelCalculator = PowerBarLevelCalculator(
+                maxLevel: self.maxRecordingPowerLevel.maxPowerLevel,
+                minLevel: self.maxRecordingPowerLevel.minPowerLevel,
+                numberOfBars: 4)
         } else if (audioPlayer.playing){
             audioPlayer.stop()
         }
@@ -160,31 +165,39 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     func calculatePowerLevel() -> Void {
         self.audioRecorder.updateMeters()
-        //println("Red %f %f", self.audioRecorder.averagePowerForChannel(1), self.audioRecorder.peakPowerForChannel(0))
-        //var averageChannelPower : NSNumber = abs((self.audioRecorder.averagePowerForChannel(0) + self.audioRecorder.peakPowerForChannel(0)) / 2)
-        maxRecordingPowerLevel.addLevelCalculation(abs(self.audioRecorder.peakPowerForChannel(0)), forInstance: 1)
+        maxRecordingPowerLevel.addLevelCalculation(abs(self.audioRecorder.peakPowerForChannel(0)))
     }
     
     func displayMeterValue() -> Void {
         self.audioPlayer.updateMeters()
-        
-        //println("Val %f %f", self.audioPlayer.averagePowerForChannel(0), self.audioPlayer.peakPowerForChannel(0))
-        
-        //var averagePower : NSNumber = abs((self.audioPlayer.averagePowerForChannel(0) + self.audioPlayer.peakPowerForChannel(0)) / 2)
         var percentage : NSNumber = abs(self.audioPlayer.averagePowerForChannel(0)) / 160.0
-        self.powerBar1.animateToHeightPercentage(percentage)
-        self.powerBar2.animateToHeightPercentage(percentage)
-        self.powerBar3.animateToHeightPercentage(percentage)
-        self.powerBar4.animateToHeightPercentage(percentage)
+        println("LEVEL %f",self.levelCalculator.powerLevelforValue(abs(self.audioPlayer.averagePowerForChannel(0))))
         
-        UIView.animateWithDuration(0.5, animations: {self.backgroundView.backgroundColor = UIColor.blueColor()}, completion: nil)
+        var level : NSNumber = self.levelCalculator.powerLevelforValue(abs(self.audioPlayer.averagePowerForChannel(0)))
+        
+        switch (level) {
+        case 1 : self.powerBar1.animateToHeightPercentage(percentage)
+        case 2 : self.powerBar2.animateToHeightPercentage(percentage)
+        case 3 : self.powerBar3.animateToHeightPercentage(percentage)
+        case 4 : self.powerBar4.animateToHeightPercentage(percentage)
+        default:  self.powerBar4.animateToHeightPercentage(percentage)
+        }
+        
+        self.animateBackground(level)
+    }
+    
+    func animateBackground(value : NSNumber) -> Void {
+        
+        switch value {
+        case 1 : UIView.animateWithDuration(0.5, animations: {self.backgroundView.backgroundColor = UIColor.blueColor()}, completion: nil)
+        case 2 : UIView.animateWithDuration(0.5, animations: {self.backgroundView.backgroundColor = UIColor.greenColor()}, completion: nil)
+        case 3 : UIView.animateWithDuration(0.5, animations: {self.backgroundView.backgroundColor = UIColor.yellowColor()}, completion: nil)
+        case 4 : UIView.animateWithDuration(0.5, animations: {self.backgroundView.backgroundColor = UIColor.orangeColor()}, completion: nil)
+        default : UIView.animateWithDuration(0.5, animations: {self.backgroundView.backgroundColor = UIColor.purpleColor()}, completion: nil)
+        }
         
         
-        //backgroundView.backgroundColor = UIColor.blueColor()
         
-        //backgroundView.alpha = CGFloat(self.audioPlayer.peakPowerForChannel(0)  * (255.0 / maxRecordingPowerLevel.averagePowerCalculation().floatValue)) / 255.0
-        
-//        println("alpha %f", (averagePower.floatValue  * (255.0 / maxRecordingPowerLevel.averagePowerCalculation().floatValue)) / 255.0 as Float)
     }
 }
 

@@ -19,6 +19,8 @@
 		97DC944E1A3DBD1B001EC023 /* PowerBarFrameWorkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DC944D1A3DBD1B001EC023 /* PowerBarFrameWorkTests.swift */; };
 		97DC94511A3DBD1B001EC023 /* PowerBarFrameWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97DC943A1A3DBD1B001EC023 /* PowerBarFrameWork.framework */; };
 		97DC94521A3DBD1B001EC023 /* PowerBarFrameWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97DC943A1A3DBD1B001EC023 /* PowerBarFrameWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		97DC94701A3EE397001EC023 /* PowerBarLevelCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DC946F1A3EE397001EC023 /* PowerBarLevelCalculator.swift */; };
+		97DC94711A3EEBDA001EC023 /* PowerBarLevelCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DC946F1A3EE397001EC023 /* PowerBarLevelCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,7 @@
 		97DC94441A3DBD1B001EC023 /* PowerBarFrameWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerBarFrameWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97DC944C1A3DBD1B001EC023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97DC944D1A3DBD1B001EC023 /* PowerBarFrameWorkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerBarFrameWorkTests.swift; sourceTree = "<group>"; };
+		97DC946F1A3EE397001EC023 /* PowerBarLevelCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PowerBarLevelCalculator.swift; path = ../PowerBarFrameWork/PowerBarLevelCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,7 @@
 		97DC930B1A399A14001EC023 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				97DC946F1A3EE397001EC023 /* PowerBarLevelCalculator.swift */,
 				97DC930C1A399A14001EC023 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -388,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97DC94711A3EEBDA001EC023 /* PowerBarLevelCalculator.swift in Sources */,
 				97DC93101A399A14001EC023 /* ViewController.swift in Sources */,
 				97DC930E1A399A14001EC023 /* AppDelegate.swift in Sources */,
 				97DC940F1A3DB0DB001EC023 /* PowerBar.swift in Sources */,
@@ -406,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97DC94701A3EE397001EC023 /* PowerBarLevelCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +602,7 @@
 		97DC94541A3DBD1B001EC023 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -610,6 +617,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -619,6 +627,7 @@
 		97DC94551A3DBD1B001EC023 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

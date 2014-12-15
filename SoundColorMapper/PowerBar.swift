@@ -29,7 +29,7 @@ class PowerBar: UIView {
             completion: nil
         )
         
-        println((0 + self.frame.size.height * CGFloat(percentage.floatValue)))
+        //println((0 + self.frame.size.height * CGFloat(percentage.floatValue)))
     }
     
     override func awakeFromNib() {
